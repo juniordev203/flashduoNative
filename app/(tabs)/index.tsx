@@ -35,39 +35,42 @@ const HomeScreen = () => {
         </View>
         {/* <View className="pt-10"> */}
         <Text className="text-lg font-semibold mb-2">Học cùng <Text className="text-blue font-extrabold">Flashduo</Text></Text>
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} className="h-56 p-2 mb-4">
-            <View className="flex-row gap-5 h-32">
-              <TouchableOpacity className="flex-1 bg-green-200 p-2 rounded-lg w-56 h-52 shadow">
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} className="h-56 p-2 mb-4">
+          <View className="flex-row gap-5 h-32">
+            <TouchableOpacity className="flex-1 bg-green-200 p-2 rounded-lg w-56 h-52 shadow">
+              <Link href="/screens/flashcard">
                 <View className="flex-1 flex-col gap-1 p-2 rounded-lg">
                   <Text className="text-2xl font-bold">Từ vựng với Flashcard</Text>
                   <Text className="text-sm text-gray-500">28 Lessons</Text>
                   <Globe size={20} />
                 </View>
-              </TouchableOpacity>
-              <TouchableOpacity className="flex-1 bg-yellow-200 p-2 rounded-lg w-56 h-52 shadow">
-                <View className="flex-1 flex-col gap-1 p-2 rounded-lg">
-                  <Text className="text-2xl font-bold">Luyện đọc cùng AI</Text>
-                  <Text className="text-sm text-gray-500">28 Lessons</Text>
-                  <Mic size={20} />
-                </View>
-              </TouchableOpacity>
-              <TouchableOpacity className="flex-1 bg-violet-200 p-2 rounded-lg w-56 h-52 shadow">
-                <View className="flex-1 flex-col gap-1 bg-blue-100 p-2 rounded-lg">
-                  <Text className="text-2xl font-bold">TOEIC READING</Text>
-                  <Text className="text-sm text-gray-500">28 Lessons</Text>
-                  <Book size={20} />
-                </View>
-              </TouchableOpacity>
-              <TouchableOpacity className="flex-1 bg-indigo-300 p-2 rounded-lg w-56 h-52 shadow">
-                <View className="flex-1 flex-col gap-1 bg-blue-100 p-2 rounded-lg">
-                  <Text className="text-2xl font-bold">TOEIC LISTENING</Text>
-                  <Text className="text-sm text-gray-500">28 Lessons</Text>
-                  <Headphones size={20} />
-                </View>
-              </TouchableOpacity>
-            </View>
-          </ScrollView>
-        
+              </Link>
+            </TouchableOpacity>
+
+            <TouchableOpacity className="flex-1 bg-yellow-200 p-2 rounded-lg w-56 h-52 shadow">
+              <View className="flex-1 flex-col gap-1 p-2 rounded-lg">
+                <Text className="text-2xl font-bold">Luyện đọc cùng AI</Text>
+                <Text className="text-sm text-gray-500">28 Lessons</Text>
+                <Mic size={20} />
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity className="flex-1 bg-violet-200 p-2 rounded-lg w-56 h-52 shadow">
+              <View className="flex-1 flex-col gap-1 bg-blue-100 p-2 rounded-lg">
+                <Text className="text-2xl font-bold">TOEIC READING</Text>
+                <Text className="text-sm text-gray-500">28 Lessons</Text>
+                <Book size={20} />
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity className="flex-1 bg-indigo-300 p-2 rounded-lg w-56 h-52 shadow">
+              <View className="flex-1 flex-col gap-1 bg-blue-100 p-2 rounded-lg">
+                <Text className="text-2xl font-bold">TOEIC LISTENING</Text>
+                <Text className="text-sm text-gray-500">28 Lessons</Text>
+                <Headphones size={20} />
+              </View>
+            </TouchableOpacity>
+          </View>
+        </ScrollView>
+
         {/* All Courses */}
         <View className="mb-4">
           <View className="flex-row justify-between items-center mb-2">
