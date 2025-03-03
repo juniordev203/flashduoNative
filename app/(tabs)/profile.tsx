@@ -1,14 +1,44 @@
 import { Bell, Edit, HelpCircle, LogOut, Settings2, SunMoon, User, Wallet } from 'lucide-react-native';
 import { Divider } from "@rneui/base";
-import { Text, View, StyleSheet, TouchableOpacity, SafeAreaView, ScrollView, Image } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity, SafeAreaView, ScrollView, Image, TextInput } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { router } from 'expo-router';
+import { useEffect, useState } from 'react';
+// import { updateUserName } from '../api/auth';
 
-export default function AboutScreen() {
+interface User {
+  deviceId: string;
+  name: string;
+}
+
+
+export default function ProfileScreen() {
+  const [user, setUser] = useState<User | null>(null);
+  const [newName, setNewName] = useState<string>('');
+
+  useEffect(() => {
+    const loadUser = async () => {
+      const userData = await AsyncStorage.getItem("user");
+      if (userData) {
+        setUser(JSON.parse(userData) as User);
+      }
+      };
+      loadUser();
+  }, []);
+  // const handleUpdateName = async () => {
+  //   if (newName.trim()) {
+  //     const updateUser = await updateUserName(newName);
+  //     if (updateUser) { 
+  //       setUser(updateUser);
+  //       setNewName('');
+  //       await AsyncStorage.setItem("user", JSON.stringify(updateUser));
+  //     }
+  //   }
+  // }
   const handleLogout = async () => {
     try {
       await AsyncStorage.removeItem('userToken');
-      router.replace('/screens/login');
+      router.replace('/login');
     } catch (error) {
       console.log('Error logging out:', error);
     }
@@ -60,10 +90,12 @@ export default function AboutScreen() {
             <TouchableOpacity className="absolute bottom-11 right-2">
               <Edit color={"#000"}/>
             </TouchableOpacity>
-            <Text className="text-2xl font-bold mt-2">Junior203</Text>
+            <Text className='font-bold text-lg mt-2'>Junior</Text>
+            {/* {user && <Text className="text-2xl font-bold mt-2">{user.name}</Text>}
+            <TextInput className="border p-2 rounded-lg mt-4 w-64"
+            placeholder="Nhập tên mới" value={newName} onChangeText={setNewName}/> */}
           </View>
         </View>
-
         <View className="flex flex-col mt-10">
           <SettingsItem Icon={SunMoon} title="Giao diện tối" />
           <SettingsItem Icon={Wallet} title="Thanh toán" />

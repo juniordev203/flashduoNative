@@ -37,15 +37,15 @@ const HomeScreen = () => {
         <Text className="text-lg font-semibold mb-2">Học cùng <Text className="text-blue font-extrabold">Flashduo</Text></Text>
         <ScrollView horizontal showsHorizontalScrollIndicator={false} className="h-56 p-2 mb-4">
           <View className="flex-row gap-5 h-32">
-            <TouchableOpacity className="flex-1 bg-green-200 p-2 rounded-lg w-56 h-52 shadow">
-              <Link href="/screens/flashcard">
+            <Link href="/screens/flashcard" asChild>
+              <TouchableOpacity className="flex-1 bg-green-200 p-2 rounded-lg w-56 h-52 shadow">
                 <View className="flex-1 flex-col gap-1 p-2 rounded-lg">
                   <Text className="text-2xl font-bold">Từ vựng với Flashcard</Text>
                   <Text className="text-sm text-gray-500">28 Lessons</Text>
                   <Globe size={20} />
                 </View>
-              </Link>
-            </TouchableOpacity>
+              </TouchableOpacity>
+            </Link>
 
             <TouchableOpacity className="flex-1 bg-yellow-200 p-2 rounded-lg w-56 h-52 shadow">
               <View className="flex-1 flex-col gap-1 p-2 rounded-lg">

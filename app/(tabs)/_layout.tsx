@@ -16,14 +16,13 @@ const TabIcon = ({
 }) => (
   <View className="flex-1 mt-3 flex flex-col items-center">
     <Icon
-    size={24} color={focused ? "#0061FF" : "#B1B1B1"}
+      size={24} color={focused ? "#0061FF" : "#B1B1B1"}
     />
     <Text
-      className={`${
-        focused
+      className={`${focused
           ? "text-blue font-bold text-xs"
           : "text-gray-600"
-      } text-xs w-full text-center mt-1`}
+        } text-xs w-full text-center mt-1`}
     >
       {title}
     </Text>
@@ -54,7 +53,7 @@ export default function TabLayout() {
           ),
         }}
       />
-            <Tabs.Screen
+      <Tabs.Screen
         name="forum"
         options={{
           title: 'Forum',
